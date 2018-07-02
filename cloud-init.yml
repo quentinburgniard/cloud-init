@@ -1,5 +1,48 @@
-#include
-https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/docker.yml
-https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/git.yml
-https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/oh-my-zsh.yml
-https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/users.yml
+#cloud-config
+users:
+  - name: tubercule
+    groups: wheel
+    shell: /bin/zsh
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1+aK6CUIVZ/gq4gCOjnAbQJs6hj1rmnkfDR4VcHu7/H6ebdz+6wf3ypEzFIWV+xw3kSM/qeMxMdXd138yBM+xZYUYRFXx3k1LEi++1SCo/9CKSOeamlFShkG6vd80bM8MYzUKbHf9fvkIlOGR5P3zN9lgF9rqBDMY+qyK2OXKbBgeLaGMqcQG/zBpAt1pFyRgXihSA3ApoOaVA2ANpbQCDvRv7J0g8YF2ubuk00ZKvxInkzg1bheS1yiPnyc40teEsccx0OPw/vmTCxBdsp0fh6G+GvyBZJ7SnQtGHAoY+PXfqy6fvYUnkpJPiJ/FEbl6YRGpBMhp429geH3xlBuN quentin@acer-swift
+
+
+# docker repository
+# https://docs.docker.com/install/linux/docker-ce/centos/
+
+yum_repos:
+  docker:
+    baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+    gpgcheck: true
+    gpgkey: 060A61C51B558A7F742B77AAC52FEB6B621E9F35
+    name: Docker repository
+
+packages:
+  # docker
+  - docker-ce
+
+  # git
+  - git
+
+  # zsh
+  - zsh
+  - zsh-completion
+
+
+package_upgrade: true
+
+
+runcmd:
+  # https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup
+  - sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
+  - sed -i -e '$aAllowUsers tubercule' /etc/ssh/sshd_config
+  - restart ssh
+
+  # git config
+  - git config --global user.name "Quentin Burgniard"
+  - git config --global user.mail "quentinburgniard@gmail.com"
+
+  # oh-my-zsh
+  # https://github.com/robbyrussell/oh-my-zsh
+  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

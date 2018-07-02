@@ -1,7 +1,0 @@
-#cloud-config
-packages:
-  - git
-
-runcmd:
-  - git config --global user.name "Quentin Burgniard"
-  - git config --global user.mail "quentinburgniard@gmail.com"
