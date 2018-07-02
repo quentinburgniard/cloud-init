@@ -1,0 +1,10 @@
+#cloud-config
+yum_repos:
+  docker:
+    baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+    gpgcheck: true
+    gpgkey: 060A61C51B558A7F742B77AAC52FEB6B621E9F35
+    name: Docker repository
+
+packages:
+  - docker-ce

@@ -4,6 +4,11 @@ Discovery of Cloud-Init : when I launch an instance I need to automate tasks, li
 ## Getting Started
 Add the user-data script when you create a new instance. The script can be add from the control panel interface or by using the API.
 
+```
+#include-once
+https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/cloud-init.yml
+```
+
 ## Sources
 [An Introduction to Cloud-Config Scripting - DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scriptin)
 

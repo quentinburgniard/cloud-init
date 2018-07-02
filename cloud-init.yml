@@ -1,0 +1,5 @@
+#include
+https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/docker.yml
+https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/git.yml
+https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/oh-my-zsh.yml
+https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/users.yml
