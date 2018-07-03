@@ -10,6 +10,6 @@ https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/cloud-init.
 ```
 
 ## Sources
-[An Introduction to Cloud-Config Scripting - DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scriptin)
+[An Introduction to Cloud-Config Scripting - DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting)
 
 [How To Use Cloud-Config For Your Initial Server Setup - DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup)

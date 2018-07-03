@@ -3,7 +3,7 @@ users:
   - name: tubercule
     groups: wheel
     shell: /bin/zsh
-    sudo: ALL=(ALL) NOPASSWD:ALL
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDK+0ctdpwuhBLGffOhwmK0G2+UMfoXK0jBgsxBWt8ximcU8/icsOcjwEYwbJhEqgMYPARVvqTxJW6EKL/q483lpwvtyVhJP+wH53eQTMddHJXmV9/edrE/sUDUURxVzVk1tPaCeFwPd/y6+QzFRCa6fYfTyvUN/h9KoqiTScDoE4DqPJjDlE9xADCkLYq2G9qHSL/388T9VTOtrNWEMzw6N6jA9IOQXX/blNe6FGaeBnPdmGaxbXtPlIB3D0jxRk33K7ihBUTeyuxapAcn4y9v8S99YG4esGulYZgTb4TYsEPgAdUdlQ/w3U+GPQZu5BSfOqKaorfo1pLpeTDDdNr9 quentin@acer-swift
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCnRrPzitz2/e+GgaEYD7yh9blgtej0y2Xbcvz67FQrP7f/LeO9FtApxFx7MOBYaDafjooI8A7WgUbDIdXwSxuQfWxziKwPlvf1L09S3Qs2H8kqOBF2X/dRhYnfn0O7PIND9dN3O/eeTGpq5wmWuCGWw33sMnEYBtH6MxsskzgfJLB/U0RAXaaHZ/82AzqDtYRxbRE0xupBZt8gsojTzujh+RGi3MWN0gd2AUAc6phrQmGCF/0g6WIHhgvppk7P/U7U0QBcBfpy2AIa2NuV5oIT9fF0MBBmQ4mMNpex2ilIBIaS77vO8IBq4Y3/Y0OLKc2ur3LZo9Xrl4nOt+TrOB0x quentin@Mac-Quentin.local
