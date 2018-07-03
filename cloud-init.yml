@@ -38,8 +38,10 @@ package_upgrade: true
 
 
 runcmd:
-  # https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup
+  # https://www.digitalocean.com/docs/monitoring/quickstart/
   - curl -sSL https://agent.digitalocean.com/install.sh | sh
+
+  # https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup
   - echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
   - echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
   - echo 'AllowUsers tubercule' >> /etc/ssh/sshd_config
