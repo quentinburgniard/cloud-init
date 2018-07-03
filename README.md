@@ -9,7 +9,6 @@ Add the user-data script when you create a new instance. The script can be add f
 https://raw.githubusercontent.com/quentinburgniard/cloud-init/master/cloud-init.yml
 ```
 
-e
 ## Sources
 [An Introduction to Cloud-Config Scripting - DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scriptin)
 
