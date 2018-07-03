@@ -27,8 +27,6 @@ runcmd:
 
   # https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup
   - echo "\n" >> /etc/ssh/sshd_config
-  - echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
-  - echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
   - echo 'AllowUsers tubercule' >> /etc/ssh/sshd_config
   - systemctl reload sshd.service
 
