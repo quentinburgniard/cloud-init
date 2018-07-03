@@ -5,7 +5,7 @@ users:
     shell: /bin/zsh
     sudo: ALL=(ALL) NOPASSWD:ALL
     ssh-authorized-keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1+aK6CUIVZ/gq4gCOjnAbQJs6hj1rmnkfDR4VcHu7/H6ebdz+6wf3ypEzFIWV+xw3kSM/qeMxMdXd138yBM+xZYUYRFXx3k1LEi++1SCo/9CKSOeamlFShkG6vd80bM8MYzUKbHf9fvkIlOGR5P3zN9lgF9rqBDMY+qyK2OXKbBgeLaGMqcQG/zBpAt1pFyRgXihSA3ApoOaVA2ANpbQCDvRv7J0g8YF2ubuk00ZKvxInkzg1bheS1yiPnyc40teEsccx0OPw/vmTCxBdsp0fh6G+GvyBZJ7SnQtGHAoY+PXfqy6fvYUnkpJPiJ/FEbl6YRGpBMhp429geH3xlBuN quentin@acer-swift
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDK+0ctdpwuhBLGffOhwmK0G2+UMfoXK0jBgsxBWt8ximcU8/icsOcjwEYwbJhEqgMYPARVvqTxJW6EKL/q483lpwvtyVhJP+wH53eQTMddHJXmV9/edrE/sUDUURxVzVk1tPaCeFwPd/y6+QzFRCa6fYfTyvUN/h9KoqiTScDoE4DqPJjDlE9xADCkLYq2G9qHSL/388T9VTOtrNWEMzw6N6jA9IOQXX/blNe6FGaeBnPdmGaxbXtPlIB3D0jxRk33K7ihBUTeyuxapAcn4y9v8S99YG4esGulYZgTb4TYsEPgAdUdlQ/w3U+GPQZu5BSfOqKaorfo1pLpeTDDdNr9 quentin@acer-swift
 
 
 # docker repository
