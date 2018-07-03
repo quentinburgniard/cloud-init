@@ -10,8 +10,6 @@ users:
 
 
 packages:
-  # docker
-  - docker-ce
   # git
   - git
   # zsh
