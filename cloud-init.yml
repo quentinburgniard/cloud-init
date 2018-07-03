@@ -16,7 +16,7 @@ yum_repos:
     name: docker
     baseurl: https://download.docker.com/linux/centos/docker-ce.repo
     gpgcheck: false
-    gpgkey: 060A61C51B558A7F742B77AAC52FEB6B621E9F35
+    gpgkey: 060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35
     name: docker repository
 
 packages:
@@ -42,11 +42,3 @@ runcmd:
   - sed -i -e '/PasswordAuthentication/s/^.*$/PasswordAuthentication no/' /etc/ssh/sshd_config
   - sed -i -e '$aAllowUsers tubercule' /etc/ssh/sshd_config
   - restart ssh
-
-  # git config
-  - git config --global user.name "Quentin Burgniard"
-  - git config --global user.mail "quentinburgniard@gmail.com"
-
-  # oh-my-zsh
-  # https://github.com/robbyrussell/oh-my-zsh
-  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
