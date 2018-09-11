@@ -1,7 +1,10 @@
 #cloud-config
+groups:
+  - docker
+
 users:
   - name: tubercule
-    groups: wheel
+    groups: wheel, docker
     shell: /bin/zsh
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
@@ -25,14 +28,12 @@ runcmd:
   - yum install -y yum-utils device-mapper-persistent-data lvm2
   - yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
   - yum install -y docker-ce
+  - systemctl enable docker
 
-
+  
 packages:
-  # git
   - git
-  # zsh
   - zsh
-  #vim
   - vim
 
 

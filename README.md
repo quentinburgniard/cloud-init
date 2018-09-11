@@ -2,7 +2,7 @@
 Discovery of Cloud-Init : when I launch an instance I need to automate tasks, like create a new user & switch shell to zsh.
 
 ## Getting Started
-Add the user-data script when you create a new instance. The script can be add from the control panel interface or by using the API.
+Add the user-data script when you create a new instance. The script can be add from the control panel interface or by using the API of your cloud provider.
 
 ```
 #include-once
