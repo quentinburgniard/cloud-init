@@ -38,3 +38,8 @@ packages:
 
 
 package_upgrade: true
+
+
+# https://cloudinit.readthedocs.io/en/latest/topics/examples.html#reboot-poweroff-when-finished
+power_state:
+  mode: reboot
