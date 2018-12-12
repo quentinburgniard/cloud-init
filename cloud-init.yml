@@ -30,16 +30,11 @@ runcmd:
   - yum install -y docker-ce
   - systemctl enable docker
 
-
-  # https://github.com/zsh-users/zsh-completions
-  - yum-config-manager --add-repo https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/CentOS_7/shells:zsh-users:zsh-completions.repo
-
   
 packages:
   - git
   - zsh
   - vim
-  - zsh-completions
 
 
 package_upgrade: true
