@@ -13,12 +13,6 @@ users:
 
 
 runcmd:
-  # https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup
-  - echo 'AllowUsers tubercule' >> /etc/ssh/sshd_config
-  - echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
-  - systemctl reload sshd.service
-
-
   # https://www.digitalocean.com/docs/monitoring/quickstart/
   - curl -sSL https://agent.digitalocean.com/install.sh | sh
 
@@ -46,8 +40,15 @@ runcmd:
   - cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
   - sed -i 's/^plugins.*/plugins=(git zsh-completions docker docker-compose)/' ~/.zshrc
 
+
   - ln -s ~/.oh-my-zsh /home/tubercule/.oh-my-zsh
   - ln -s ~/.zshrc /home/tubercule/.zshrc
+
+
+  # https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup
+  - echo 'AllowUsers tubercule' >> /etc/ssh/sshd_config
+  - echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
+  - systemctl reload sshd.service
 
 
 packages:
