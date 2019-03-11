@@ -2,6 +2,7 @@
 groups:
   - docker
 
+
 users:
   - name: tubercule
     groups: wheel, docker
@@ -9,18 +10,11 @@ users:
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDK+0ctdpwuhBLGffOhwmK0G2+UMfoXK0jBgsxBWt8ximcU8/icsOcjwEYwbJhEqgMYPARVvqTxJW6EKL/q483lpwvtyVhJP+wH53eQTMddHJXmV9/edrE/sUDUURxVzVk1tPaCeFwPd/y6+QzFRCa6fYfTyvUN/h9KoqiTScDoE4DqPJjDlE9xADCkLYq2G9qHSL/388T9VTOtrNWEMzw6N6jA9IOQXX/blNe6FGaeBnPdmGaxbXtPlIB3D0jxRk33K7ihBUTeyuxapAcn4y9v8S99YG4esGulYZgTb4TYsEPgAdUdlQ/w3U+GPQZu5BSfOqKaorfo1pLpeTDDdNr9 quentin@acer-swift
-  - name: tsunami
-    groups: wheel, docker
-    shell: /bin/zsh
-    sudo: ['ALL=(ALL) NOPASSWD:ALL']
-    ssh-authorized-keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCgJqwowpQtbWSOM8Dyey7ncaRSQerQj7ibKLr6icXvQ6exTDNTnU5ddJA7ZDeXKn8O+UGyf50ZeHqM4NF1/oU9kfqdKqYN7udL5eJjj/fu5LWDYZWx4dsJ0H2RlSF9P/iboBJbK5IU6Raq3Gpf9aXkVI4qToN4bu86mC7cbIVyGSPnr5LSdxPz17EbIH1aj1u45J+I/V4G0bxKcqpjbges9JevXotguVYYMFORdHKUKzJ32FxEXOBLeh0XXpII1+M3gRNFiboClX298MgHGCDus+OYamNdqXt7UZ5/Y6Q6o3yFJL5p2bhKOzJjiwGajXxl8OPbxDfS7QaPGZTvKjaJ u0_a239@localhost
 
 
 runcmd:
   # https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup
-  - echo '' >> /etc/ssh/sshd_config
-  - echo 'AllowUsers tubercule tsunami' >> /etc/ssh/sshd_config
+  - echo 'AllowUsers tubercule' >> /etc/ssh/sshd_config
   - echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
   - systemctl reload sshd.service
 
@@ -35,7 +29,26 @@ runcmd:
   - yum install -y docker-ce
   - systemctl enable docker
 
-  
+
+  # https://docs.docker.com/compose/install/#install-compose
+  - curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  - chmod +x /usr/local/bin/docker-compose
+
+
+  # https://github.com/robbyrussell/oh-my-zsh
+  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  - export ZSH="/home/tubercule/.oh-my-zsh" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
+  # https://github.com/zsh-users/zsh-completions#oh-my-zsh
+  - git clone --depth=1 https://github.com/zsh-users/zsh-completions /root/.oh-my-zsh/custom/plugins/zsh-completions
+  - git clone --depth=1 https://github.com/zsh-users/zsh-completions /home/tubercule/.oh-my-zsh/custom/plugins/zsh-completions
+
+
+  - echo 'plugins=(git zsh-completions docker docker-compose)' >> /root/.zshrc
+  - echo 'plugins=(git zsh-completions docker docker-compose)' >> home/tubercule/.zshrc
+
+
 packages:
   - git
   - zsh
