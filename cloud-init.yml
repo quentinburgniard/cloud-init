@@ -37,22 +37,22 @@ runcmd:
 
   # https://github.com/robbyrussell/oh-my-zsh
   - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  - export ZSH="/home/tubercule/.oh-my-zsh" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
   # https://github.com/zsh-users/zsh-completions#oh-my-zsh
-  - git clone --depth=1 https://github.com/zsh-users/zsh-completions /root/.oh-my-zsh/custom/plugins/zsh-completions
-  - git clone --depth=1 https://github.com/zsh-users/zsh-completions /home/tubercule/.oh-my-zsh/custom/plugins/zsh-completions
+  - git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 
 
-  - echo 'plugins=(git zsh-completions docker docker-compose)' >> /root/.zshrc
-  - echo 'plugins=(git zsh-completions docker docker-compose)' >> home/tubercule/.zshrc
+  - cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+  - sed -i '%s/plugins/plugins=(git zsh-completions docker docker-compose)/' ~/.zshrc
+
+  - ln -s /home/tubercule/.oh-my-zsh ~/.oh-my-zsh
+  - ln -s /home/tubercule/.oh-my-zsh ~/.zshrc
 
 
 packages:
   - git
   - zsh
-  - vim
 
 
 package_upgrade: true
