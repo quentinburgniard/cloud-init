@@ -44,10 +44,10 @@ runcmd:
 
 
   - cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-  - sed -i '%s/plugins/plugins=(git zsh-completions docker docker-compose)/' ~/.zshrc
+  - sed -i 's/^plugins.*/plugins=(git zsh-completions docker docker-compose)/' ~/.zshrc
 
-  - ln -s /home/tubercule/.oh-my-zsh ~/.oh-my-zsh
-  - ln -s /home/tubercule/.oh-my-zsh ~/.zshrc
+  - ln -s ~/.oh-my-zsh /home/tubercule/.oh-my-zsh
+  - ln -s ~/.zshrc /home/tubercule/.zshrc
 
 
 packages:
