@@ -1,0 +1,7 @@
+[user]
+	name = Quentin Burgniard
+	email = quentinburgniard@gmail.com
+	username = quentinburgniard
+
+[core]
+	excludesfile = ~/.gitignore
