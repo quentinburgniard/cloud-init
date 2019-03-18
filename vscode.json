@@ -1,9 +1,10 @@
 {
     "editor.renderWhitespace": "boundary",
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "on",
     "editor.codeInsets": true,
     "editor.formatOnPaste": true,
     "css.lint.duplicateProperties": "warning",
     "git.enableSmartCommit": true,
-    "git.postCommitCommand": "sync"
+    "git.postCommitCommand": "sync",
+    "git.confirmSync": false
 }
