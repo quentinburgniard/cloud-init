@@ -14,7 +14,7 @@ users:
 
 runcmd:
   # https://www.digitalocean.com/docs/monitoring/quickstart/
-  - curl -sSL https://agent.digitalocean.com/install.sh | sh
+  - curl -sSL https://insights.nyc3.cdn.digitaloceanspaces.com/install.sh | sudo bash
 
 
   # https://docs.docker.com/install/linux/docker-ce/centos/
