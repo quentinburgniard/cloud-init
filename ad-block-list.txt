@@ -33,3 +33,4 @@
 @@||loreal-paris.fr/$document
 @@||digitalocean.com/$document
 @@||techradar.com/$document
+@@||n26.com/$document
