@@ -5,3 +5,31 @@
 ! Expires: 7 days (update frequency)
 ! Homepage: https://github.com/quentinburgniard/utils
 !
+@@||adobe.com/$document
+@@||bankin.com/$document
+@@||androidcentral.com/$document
+@@||malt.fr/$document
+@@||sunrise.ch/$document
+@@||nytimes.com/$document
+@@||vmware.com/$document
+@@||paperspace.com/$document
+@@||google.ch/$document
+@@||amazon.fr/$document
+@@|https://www.youtube.com/*ARTE|$document
+@@||sosh.fr/$document
+@@|https://www.netflix.com/watch/80067830?$document
+@@||www.netflix.com/$document
+@@||evernote.com/$document
+@@||myjoliecandle.com/$document
+@@||carrefour.fr/$document
+@@||codetasty.com/$document
+@@||lequipe.fr/$document
+@@||mediapart.fr/$document
+@@||microsoft.com/$document
+@@||amazon.com/$document
+@@||coursesu.com/$document
+@@||boursorama.com/$document
+@@||helsana.ch/$document
+@@||loreal-paris.fr/$document
+@@||digitalocean.com/$document
+@@||techradar.com/$document
