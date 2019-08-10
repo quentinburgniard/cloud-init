@@ -1,0 +1,7 @@
+[Adblock Plus 2.0]
+! Version: 1.0.0
+! Title: Quentin Burgniard Ad Block List
+! Last modified: 10/08/2019
+! Expires: 7 days (update frequency)
+! Homepage: https://github.com/quentinburgniard/utils
+!
