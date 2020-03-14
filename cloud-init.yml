@@ -37,6 +37,10 @@ runcmd:
   - git clone https://github.com/zsh-users/zsh-completions /home/tubercule/.oh-my-zsh/custom/plugins/zsh-completions
 
 
+  # https://github.com/quentinburgniard/digitalleman
+  - git clone https://github.com/quentinburgniard/digitalleman.git /home/tubercule/digitalleman
+
+
   - cp /home/tubercule/.oh-my-zsh/templates/zshrc.zsh-template /home/tubercule/.zshrc
   - sed -i 's/^plugins.*/plugins=(git zsh-completions docker docker-compose)/' /home/tubercule/.zshrc
 
