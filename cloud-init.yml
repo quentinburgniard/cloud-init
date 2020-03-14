@@ -9,18 +9,18 @@ users:
     shell: /bin/zsh
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDK+0ctdpwuhBLGffOhwmK0G2+UMfoXK0jBgsxBWt8ximcU8/icsOcjwEYwbJhEqgMYPARVvqTxJW6EKL/q483lpwvtyVhJP+wH53eQTMddHJXmV9/edrE/sUDUURxVzVk1tPaCeFwPd/y6+QzFRCa6fYfTyvUN/h9KoqiTScDoE4DqPJjDlE9xADCkLYq2G9qHSL/388T9VTOtrNWEMzw6N6jA9IOQXX/blNe6FGaeBnPdmGaxbXtPlIB3D0jxRk33K7ihBUTeyuxapAcn4y9v8S99YG4esGulYZgTb4TYsEPgAdUdlQ/w3U+GPQZu5BSfOqKaorfo1pLpeTDDdNr9 quentin@acer-swift
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIKEvgAdTE2JaIv9FlCy8shNM6rFtb6goLNoqvLfEThpruD3OoAU94YWnQP8ScuLbIUHJdzxsC9tiIAjgh0+m99XAL3DBOdi7IFVEQt71lw9w8n3D0HvG765UzCDdbgZolAI/FGiJzUDYIG8Hz0ol1LAFqtyRpaFsp6vZtq68PBkqkuTUwIss4QP9LyDjdjfeAR17rEVxtpukBdecKsCuynAy8QqnONE0lEukHwMRBkMywAD462W3uEfmsYuQFvG+hPuReqQFJmhM1e4verdoU8r3Uu5flQ5YbgqSh5KGunqBvYCyYtEwCcEG5uKTRRKvEZttBaK3PkAJq5mK9IMcqg4XyPlqcMzn962AgCcV5WlECvmQ/sN4L12Boh6Zf4A2d8EnE1XxyCt4YXJ9wOat9gwt77TK0Mf11fWpFEouN6eWOAW4fBle3H9plFa6vR8hrHqWfeWYA+UrrguZaR020gTyzBYCfGYMqwL2UfMpQQIyivnYcmjS+l4EM39MBwOk= quentin@precision-5510
 
 
 runcmd:
   # https://www.digitalocean.com/docs/monitoring/quickstart/
-  - curl -sSL https://insights.nyc3.cdn.digitaloceanspaces.com/install.sh | sudo bash
+  - curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
 
 
   # https://docs.docker.com/install/linux/docker-ce/centos/
   - yum install -y yum-utils device-mapper-persistent-data lvm2
   - yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-  - yum install -y docker-ce
+  - yum install docker-ce docker-ce-cli containerd.io
   - systemctl enable docker
 
 

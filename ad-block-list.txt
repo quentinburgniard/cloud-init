@@ -15,10 +15,9 @@
 @@||paperspace.com/$document
 @@||google.ch/$document
 @@||amazon.fr/$document
-@@|https://www.youtube.com/*ARTE|$document
+@@||youtube.com/*ARTE|$document
 @@||sosh.fr/$document
-@@|https://www.netflix.com/watch/80067830?$document
-@@||www.netflix.com/$document
+@@||netflix.com/$document
 @@||evernote.com/$document
 @@||myjoliecandle.com/$document
 @@||carrefour.fr/$document
@@ -35,3 +34,7 @@
 @@||techradar.com/$document
 @@||n26.com/$document
 @@||strapi.io/$document
+@@||laposte.fr/$document
+@@||dropbox.com/$document
+@@||tutti.ch/$document
+@@||immoscout24.ch/$document
