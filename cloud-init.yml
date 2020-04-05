@@ -38,7 +38,7 @@ runcmd:
 
 
   # https://github.com/quentinburgniard/digitalleman
-  - git clone https://github.com/quentinburgniard/digitalleman.git /home/username/digitalleman
+  - git clone https://github.com/quentinburgniard/reverse-proxy.git /home/username/reverse-proxy
 
 
   - cp /home/username/.oh-my-zsh/templates/zshrc.zsh-template /home/username/.zshrc
