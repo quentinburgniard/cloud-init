@@ -1,8 +1,5 @@
-#cloud-config
 groups:
   - docker
-
-
 users:
   - name: username
     groups: wheel, docker
@@ -10,58 +7,26 @@ users:
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIKEvgAdTE2JaIv9FlCy8shNM6rFtb6goLNoqvLfEThpruD3OoAU94YWnQP8ScuLbIUHJdzxsC9tiIAjgh0+m99XAL3DBOdi7IFVEQt71lw9w8n3D0HvG765UzCDdbgZolAI/FGiJzUDYIG8Hz0ol1LAFqtyRpaFsp6vZtq68PBkqkuTUwIss4QP9LyDjdjfeAR17rEVxtpukBdecKsCuynAy8QqnONE0lEukHwMRBkMywAD462W3uEfmsYuQFvG+hPuReqQFJmhM1e4verdoU8r3Uu5flQ5YbgqSh5KGunqBvYCyYtEwCcEG5uKTRRKvEZttBaK3PkAJq5mK9IMcqg4XyPlqcMzn962AgCcV5WlECvmQ/sN4L12Boh6Zf4A2d8EnE1XxyCt4YXJ9wOat9gwt77TK0Mf11fWpFEouN6eWOAW4fBle3H9plFa6vR8hrHqWfeWYA+UrrguZaR020gTyzBYCfGYMqwL2UfMpQQIyivnYcmjS+l4EM39MBwOk= quentin@precision-5510
-
-
 runcmd:
-  # https://www.digitalocean.com/docs/monitoring/quickstart/
   - curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
-
-
-  # https://docs.docker.com/install/linux/docker-ce/centos/
   - yum install -y yum-utils device-mapper-persistent-data lvm2
   - yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
   - yum install -y --nobest docker-ce docker-ce-cli containerd.io
   - systemctl enable docker
-
-
-  # https://docs.docker.com/compose/install/#install-compose
   - curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   - chmod +x /usr/local/bin/docker-compose
-
-
-  # https://github.com/robbyrussell/oh-my-zsh
   - export ZSH="/home/username/.oh-my-zsh" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-
-  # https://github.com/zsh-users/zsh-completions#oh-my-zsh
   - git clone https://github.com/zsh-users/zsh-completions /home/username/.oh-my-zsh/custom/plugins/zsh-completions
-
-
-  # https://github.com/quentinburgniard/digitalleman
   - git clone https://github.com/quentinburgniard/reverse-proxy.git /home/username/reverse-proxy
-
-
   - cp /home/username/.oh-my-zsh/templates/zshrc.zsh-template /home/username/.zshrc
   - sed -i 's/^plugins.*/plugins=(git zsh-completions docker docker-compose)/' /home/username/.zshrc
-
-
   - chown -R username:username /home/username/
-
-
-  # https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup
   - echo 'AllowUsers username' >> /etc/ssh/sshd_config
   - echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
   - systemctl reload sshd.service
-
-
 packages:
   - git
   - zsh
-
-
 package_upgrade: true
-
-
-# https://cloudinit.readthedocs.io/en/latest/topics/examples.html#reboot-poweroff-when-finished
 power_state:
   mode: reboot
