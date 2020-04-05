@@ -4,7 +4,7 @@ groups:
 
 
 users:
-  - name: user
+  - name: username
     groups: wheel, docker
     shell: /bin/zsh
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
@@ -30,26 +30,26 @@ runcmd:
 
 
   # https://github.com/robbyrussell/oh-my-zsh
-  - export ZSH="/home/tubercule/.oh-my-zsh" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  - export ZSH="/home/username/.oh-my-zsh" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
   # https://github.com/zsh-users/zsh-completions#oh-my-zsh
-  - git clone https://github.com/zsh-users/zsh-completions /home/tubercule/.oh-my-zsh/custom/plugins/zsh-completions
+  - git clone https://github.com/zsh-users/zsh-completions /home/username/.oh-my-zsh/custom/plugins/zsh-completions
 
 
   # https://github.com/quentinburgniard/digitalleman
-  - git clone https://github.com/quentinburgniard/digitalleman.git /home/tubercule/digitalleman
+  - git clone https://github.com/quentinburgniard/digitalleman.git /home/username/digitalleman
 
 
-  - cp /home/tubercule/.oh-my-zsh/templates/zshrc.zsh-template /home/tubercule/.zshrc
-  - sed -i 's/^plugins.*/plugins=(git zsh-completions docker docker-compose)/' /home/tubercule/.zshrc
+  - cp /home/username/.oh-my-zsh/templates/zshrc.zsh-template /home/username/.zshrc
+  - sed -i 's/^plugins.*/plugins=(git zsh-completions docker docker-compose)/' /home/username/.zshrc
 
 
-  - chown -R tubercule:tubercule /home/tubercule/
+  - chown -R username:username /home/username/
 
 
   # https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup
-  - echo 'AllowUsers tubercule' >> /etc/ssh/sshd_config
+  - echo 'AllowUsers username' >> /etc/ssh/sshd_config
   - echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
   - systemctl reload sshd.service
 
