@@ -4,7 +4,7 @@ groups:
 
 
 users:
-  - name: tubercule
+  - name: user
     groups: wheel, docker
     shell: /bin/zsh
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
