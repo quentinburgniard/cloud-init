@@ -1,3 +1,4 @@
+#cloud-config
 groups:
   - docker
 users:
