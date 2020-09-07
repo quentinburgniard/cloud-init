@@ -8,16 +8,15 @@ users:
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIKEvgAdTE2JaIv9FlCy8shNM6rFtb6goLNoqvLfEThpruD3OoAU94YWnQP8ScuLbIUHJdzxsC9tiIAjgh0+m99XAL3DBOdi7IFVEQt71lw9w8n3D0HvG765UzCDdbgZolAI/FGiJzUDYIG8Hz0ol1LAFqtyRpaFsp6vZtq68PBkqkuTUwIss4QP9LyDjdjfeAR17rEVxtpukBdecKsCuynAy8QqnONE0lEukHwMRBkMywAD462W3uEfmsYuQFvG+hPuReqQFJmhM1e4verdoU8r3Uu5flQ5YbgqSh5KGunqBvYCyYtEwCcEG5uKTRRKvEZttBaK3PkAJq5mK9IMcqg4XyPlqcMzn962AgCcV5WlECvmQ/sN4L12Boh6Zf4A2d8EnE1XxyCt4YXJ9wOat9gwt77TK0Mf11fWpFEouN6eWOAW4fBle3H9plFa6vR8hrHqWfeWYA+UrrguZaR020gTyzBYCfGYMqwL2UfMpQQIyivnYcmjS+l4EM39MBwOk= quentin@precision-5510
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDahpL/SGb9as8hryQjNjvIHFOSvc+gtXB/wM/EFHM4jqE2EaTbu6Bva1W3lJv19JcoZEUSCaD5rZKabNGoVSnQ7JSeAdr1vNxN+C3bdiyG5/4M39mLF4RBQ8tUEUAlcZCOn2jvHGaJ8j6EAxA0SSEJPPj7Ju0Bv+3kjXnS/NeGSpjSIO2rCXrhIF0QglCj+OxsTE6JJFo6G0y1750fgtLg4ZLQdxnBjN2VkVDC/DPsdB+lYtE7P1deUrC1vfcxl1VMUD1z/1QuMwtuKBel7X9l4xagtjLXOSBlcCixQS8hJHo7c4KRYIW5qO0nzvLeAPY25qkD/O9zechoD46cEQ9Y/nfYCJ5z8xbxvHwEEaTlAU/+OSS3hVQlo0qvwXaX2NeT9O/lLVHmWpvIEpnnocelvLLzeO05xmROFnFj/oYri773y5GrWMNV+gOEPCLhyxCz/FtzqBqHIz6Vu3i5wEEovw++4b8vzsQRkYBoUjFKP90dVSHKldhXayoB3vetCLk= quentin@precision-5510
 runcmd:
   - curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
-  - yum install -y yum-utils device-mapper-persistent-data lvm2
+  - yum install -y yum-utils
   - yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-  - yum install -y --nobest docker-ce docker-ce-cli containerd.io
+  - yum install -y docker-ce docker-ce-cli containerd.io
   - systemctl enable docker
-  - curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  - curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   - chmod +x /usr/local/bin/docker-compose
-  - export ZSH="/home/username/.oh-my-zsh" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  - export ZSH="/home/username/.oh-my-zsh" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   - git clone https://github.com/zsh-users/zsh-completions /home/username/.oh-my-zsh/custom/plugins/zsh-completions
   - git clone https://github.com/quentinburgniard/reverse-proxy.git /home/username/reverse-proxy
   - cp /home/username/.oh-my-zsh/templates/zshrc.zsh-template /home/username/.zshrc
