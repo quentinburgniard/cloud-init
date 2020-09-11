@@ -9,6 +9,9 @@
 @@||bankin.com/$document
 @@||androidcentral.com/$document
 @@||malt.fr/$document
+@@||linode.com/$document
+@@||notion.so/$document
+@@||docker.com/$document
 @@||sunrise.ch/$document
 @@||nytimes.com/$document
 @@||vmware.com/$document
